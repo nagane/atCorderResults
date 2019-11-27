@@ -16,3 +16,11 @@ func calcDigit(a int, b int, x int) bool {
 	fmt.Println(ans)
 	return true
 }
+
+// n 買う数字
+// a 係数
+// x 所持金
+func buyedNumber(n int, a int, x int) bool {
+
+	return true
+}
