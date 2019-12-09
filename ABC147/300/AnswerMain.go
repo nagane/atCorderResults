@@ -17,8 +17,14 @@ func main() {
 
 	ans := 0
 
-	for bits := 1; bits < (1 << N); bits++ {
+	for bits := 1; bits < 1<<uint(N); bits++ {
+		ok := true
+		for i := 0; i < N; i++ {
+			if 1 > (bits & (1 << uint(i-1))) {
+				fmt.Println(ok)
+				ans++
+			}
+		}
 
 	}
-
 }
