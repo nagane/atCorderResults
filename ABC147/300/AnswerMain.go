@@ -5,11 +5,13 @@ import "fmt"
 func main() {
 	var N int
 	fmt.Scan(&N)
-	var A []int
-	var x [][]int
-	var y [][]int
+	A := make([]int, N)
+	x := make([][]int, N)
+	y := make([][]int, N)
 	for i := 0; i < N; i++ {
 		fmt.Scan(&A[i])
+		x[i] = make([]int, A[i])
+		y[i] = make([]int, A[i])
 		for j := 0; j < A[i]; j++ {
 			fmt.Scan(&x[i][j], &y[i][j])
 		}
