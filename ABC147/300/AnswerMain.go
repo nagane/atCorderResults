@@ -19,14 +19,35 @@ func main() {
 
 	ans := 0
 
-	for bits := 1; bits < 1<<uint(N); bits++ {
+	for bits := 1; bits < (1 << uint(N)); bits++ {
 		ok := true
 		for i := 0; i < N; i++ {
-			if 1 > (bits & (1 << uint(i-1))) {
-				fmt.Println(ok)
-				ans++
+			if bits&(1<<uint(i)) == 0 {
+				continue
+			}
+			for j := 0; j < A[i]; j++ {
+				if ((bits>>uint(x[i][j]-1))&1)^y[i][j] == 1 {
+					ok = false
+				}
 			}
 		}
-
+		if ok {
+			ans = max(ans, counter(bits))
+		}
 	}
+	fmt.Println(ans)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func counter(x int) int {
+	if x == 0 {
+		return 0
+	}
+	return counter(x>>1) + (x & 1)
 }
