@@ -27,6 +27,7 @@ func main() {
 			}
 			for j := 0; j < A[i]; j++ {
 				fmt.Println(((bits >> uint(x[i][j]-1)) & 1) ^ y[i][j])
+				// ここは違う表現があるみたい
 				if ((bits>>uint(x[i][j]-1))&1)^y[i][j] == 1 {
 					ok = false
 				}
