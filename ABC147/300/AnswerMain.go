@@ -26,6 +26,7 @@ func main() {
 				continue
 			}
 			for j := 0; j < A[i]; j++ {
+				fmt.Println(((bits >> uint(x[i][j]-1)) & 1) ^ y[i][j])
 				if ((bits>>uint(x[i][j]-1))&1)^y[i][j] == 1 {
 					ok = false
 				}
