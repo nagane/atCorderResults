@@ -22,25 +22,11 @@ func main() {
 
 	// ここにそもそも判定する処理を入れる
 	for i := 0; i < N; i++ {
+
+		flug = true
 		sc.Scan()
 		P[i], _ = strconv.Atoi(sc.Text())
 
-		if min == 1 {
-			break
-		}
-		if flug {
-			ans += 1
-		}
-
-		if P[i] > min {
-			flug = false
-		}
-	}
-
-	fmt.Println(ans)
-
-	for i := 0; i < N; i++ {
-		flug = true
 		if P[i] > min {
 			flug = false
 		} else {
@@ -60,5 +46,6 @@ func main() {
 			ans += 1
 		}
 	}
+
 	fmt.Println(ans)
 }
