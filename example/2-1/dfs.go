@@ -19,11 +19,26 @@ func main() {
 		fmt.Scan(&a[i])
 	}
 
-	fmt.Sacn(&k)
+	fmt.Scan(&k)
 
-	calc(9, 0)
+	if calc(0, 0) {
+		fmt.Println("ok")
+	}
 }
 
-func calc(sum int, iter int) bool {
+func calc(iter int, sum int) bool {
 
+	if iter == n {
+		return sum == k
+	}
+
+	if calc(iter+1, sum) {
+		return true
+	}
+
+	if calc(iter+1, sum+a[iter]) {
+		return true
+	}
+
+	return false
 }
