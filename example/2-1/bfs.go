@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+//BFS: Breadth-First Search
 func main() {
 	var N, M int
 	fmt.Scan(&N, &M)
