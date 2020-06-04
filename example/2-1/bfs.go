@@ -8,7 +8,10 @@ import (
 func main() {
 	var N, M int
 	fmt.Scan(&N, &M)
-	maze := make([][]string, N)
+	maze := make([][]string, N) //迷路を表す文字列の配列
+
+	//スタート、ゴールの座標
+	var sx, sy, gx, gy int
 
 	//迷路インプット
 	for i := 0; i < N; i++ {
@@ -16,8 +19,22 @@ func main() {
 		fmt.Scan(&str)
 		maze[i] = make([]string, M)
 		for j := 0; j < M; j++ {
+			// TODO: インプットついでにスタートとゴールの座標を取りたい
 			maze[i][j] = str[:j]
 		}
 	}
 
+	// INF
+	INF := 100000000
+	//移動ベクトル
+	dx := []int{1, 0, -1, 0}
+	dy := []int{0, 1, 0, -1}
+
+	d := make([][]string, N) //各点までの最短距離の配列
+	for i := 0; 1 < N; i++ {
+		d[i] = make([]string, M)
+		for j := 0; j < M; j++ {
+			d[i][j] = INF
+		}
+	}
 }
