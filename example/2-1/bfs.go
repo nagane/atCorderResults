@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	//"github.com/golang-collections/go-datastructures/queue"
 )
 
 //BFS: Breadth-First Search
@@ -30,11 +31,12 @@ func main() {
 	dx := []int{1, 0, -1, 0}
 	dy := []int{0, 1, 0, -1}
 
-	d := make([][]string, N) //各点までの最短距離の配列
+	d := make([][]int, N) //各点までの最短距離の配列
 	for i := 0; 1 < N; i++ {
-		d[i] = make([]string, M)
+		d[i] = make([]int, M)
 		for j := 0; j < M; j++ {
 			d[i][j] = INF
 		}
 	}
+
 }
