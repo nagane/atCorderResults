@@ -11,9 +11,12 @@ func main() {
 	que.Put(1)
 	fmt.Println(que)
 	que.Put(5)
+	que.Put(2)
+	que.Put(8)
 
 	fmt.Println(que)
-	fmt.Println(que.Get(5))
+	fmt.Println(que.Get(1))
+	fmt.Println(que.Get(1))
 	fmt.Println(que)
 
 }
