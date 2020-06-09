@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	//"github.com/golang-collections/go-datastructures/queue"
+	g "github.com/golang-collections/go-datastructures/queue"
 )
 
 //BFS: Breadth-First Search
@@ -22,6 +22,15 @@ func main() {
 		for j := 0; j < M; j++ {
 			// TODO: インプットついでにスタートとゴールの座標を取りたい
 			maze[i][j] = str[:j]
+			//　スタート位置を記憶
+			if maze[i][j] == "S" {
+				sx = i
+				sy = j
+			}
+			if maze[i][j] == "G" {
+				gx = i
+				gy = j
+			}
 		}
 	}
 
@@ -31,6 +40,7 @@ func main() {
 	dx := []int{1, 0, -1, 0}
 	dy := []int{0, 1, 0, -1}
 
+	que := q.New(INF)
 	d := make([][]int, N) //各点までの最短距離の配列
 	for i := 0; 1 < N; i++ {
 		d[i] = make([]int, M)
