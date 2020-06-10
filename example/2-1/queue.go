@@ -16,7 +16,8 @@ func main() {
 
 	fmt.Println(que)
 	fmt.Println(que.Get(1))
-	fmt.Println(que.Get(1))
+	fmt.Println(que.Get(2))
 	fmt.Println(que)
+	fmt.Println(que.Len())
 
 }

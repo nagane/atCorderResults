@@ -56,10 +56,9 @@ func main() {
 
 	// スタート地点をキューに入れてその地点を0とする
 	que := q.New(100000000)
-	var start P
-	que.Put()
+	que.Put(P{sx, sy})
 
-	for q.Len > 0 {
+	for que.Len() > 0 {
 		fmt.Println("quie")
 
 	}
