@@ -2,8 +2,14 @@ package main
 
 import (
 	"fmt"
-	g "github.com/golang-collections/go-datastructures/queue"
+	q "github.com/golang-collections/go-datastructures/queue"
 )
+
+// P is interface
+type P struct {
+	x int
+	y int
+}
 
 //BFS: Breadth-First Search
 func main() {
@@ -40,13 +46,22 @@ func main() {
 	dx := []int{1, 0, -1, 0}
 	dy := []int{0, 1, 0, -1}
 
-	que := q.New(INF)
 	d := make([][]int, N) //各点までの最短距離の配列
 	for i := 0; 1 < N; i++ {
 		d[i] = make([]int, M)
 		for j := 0; j < M; j++ {
 			d[i][j] = INF
 		}
+	}
+
+	// スタート地点をキューに入れてその地点を0とする
+	que := q.New(100000000)
+	var start P
+	que.Put()
+
+	for q.Len > 0 {
+		fmt.Println("quie")
+
 	}
 
 }
