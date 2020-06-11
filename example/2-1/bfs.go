@@ -59,7 +59,6 @@ func main() {
 	que.Put(P{sx, sy})
 
 	for que.Len() > 0 {
-		fmt.Println("quie")
 
 	}
 
