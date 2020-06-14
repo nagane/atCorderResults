@@ -7,37 +7,32 @@ var x, y int
 func main() {
 	fmt.Scan(&x, &y)
 
-	if y%2 != 0 {
-		fmt.Println("No")
+	var flag bool
+	sum := y / 4
+	s := y / 4
+	iter := 0
 
+	for {
+		if sum > x {
+			flag = false
+			break
+		}
+		if (s*4)+(iter*2) > y {
+			flag = false
+			break
+		}
+		if sum == x {
+			flag = true
+			break
+		}
+		sum++
+		iter++
+		s--
+	}
+
+	if flag {
+		fmt.Println("Yes")
 	} else {
-		if cal(0, 0) {
-			fmt.Println("Yes")
-		} else {
-			fmt.Println("No")
-		}
+		fmt.Println("No")
 	}
-}
-
-func cal(iter int, sum int) bool {
-
-	if sum > y {
-		return false
-	}
-
-	if iter == x {
-		if sum == y {
-			return true
-		}
-		return false
-	}
-
-	if cal(iter+1, sum+4) {
-		return true
-	}
-	if cal(iter+1, sum+2) {
-		return true
-	}
-
-	return false
 }

@@ -7,14 +7,24 @@ var x, y int
 func main() {
 	fmt.Scan(&x, &y)
 
-	if cal(0, 0) {
-		fmt.Println("Yes")
-	} else {
+	if y%2 != 0 {
 		fmt.Println("No")
+
+	} else {
+		if cal(0, 0) {
+			fmt.Println("Yes")
+		} else {
+			fmt.Println("No")
+		}
 	}
 }
 
 func cal(iter int, sum int) bool {
+
+	if sum > y {
+		return false
+	}
+
 	if iter == x {
 		if sum == y {
 			return true
@@ -22,11 +32,12 @@ func cal(iter int, sum int) bool {
 		return false
 	}
 
-	if cal(iter+1, sum+2) {
-		return true
-	}
 	if cal(iter+1, sum+4) {
 		return true
 	}
+	if cal(iter+1, sum+2) {
+		return true
+	}
+
 	return false
 }
