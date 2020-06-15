@@ -7,32 +7,15 @@ var x, y int
 func main() {
 	fmt.Scan(&x, &y)
 
-	var flag bool
-	sum := y / 4
-	s := y / 4
-	iter := 0
-
-	for {
-		if sum > x {
-			flag = false
-			break
+	ans := "No"
+	// a = 1だと多分全部4で通るみたいなケースがダメっぽい？
+	for a := 0; a < x+1; a++ {
+		b := x - a
+		if 2*a+4*b == y {
+			ans = "Yes"
 		}
-		if (s*4)+(iter*2) > y {
-			flag = false
-			break
-		}
-		if sum == x {
-			flag = true
-			break
-		}
-		sum++
-		iter++
-		s--
 	}
 
-	if flag {
-		fmt.Println("Yes")
-	} else {
-		fmt.Println("No")
-	}
+	fmt.Println(ans)
+
 }
