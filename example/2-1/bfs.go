@@ -62,7 +62,7 @@ func main() {
 	for que.Len() > 0 {
 		p, _ := que.Get(1)
 		fmt.Println("pop p")
-		fmt.Println(p)
+		fmt.Println(p.x)
 	}
 	fmt.Println(gy)
 	fmt.Println(gx)
