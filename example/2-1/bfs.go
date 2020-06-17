@@ -56,13 +56,15 @@ func main() {
 
 	// スタート地点をキューに入れてその地点を0とする
 	que := q.New(100000000)
-	que.Put(P{sx, sy})
+	que.Put(P{x: sx, y: sy})
 	d[sx][sy] = 0
 
 	for que.Len() > 0 {
 		p, _ := que.Get(1)
+		var cur P
+		cur = p[0].(P)
 		fmt.Println("pop p")
-		fmt.Println(p.x)
+		fmt.Println(cur.x)
 	}
 	fmt.Println(gy)
 	fmt.Println(gx)
