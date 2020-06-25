@@ -71,9 +71,10 @@ func main() {
 
 		//移動4方向をループ
 		for i := 0; i < 4; i++ {
+			fmt.Println("hapen!?")
 			var nx, ny int //移動したあとの座標
 			nx = cur.x + dx[i]
-			ny = cur.y + dx[y]
+			ny = cur.y + dy[i]
 
 			// 行ったことないならPut
 			if 0 <= nx && ny < N && 0 <= ny && ny < M && maze[nx][ny] != "#" && d[nx][ny] == INF {
