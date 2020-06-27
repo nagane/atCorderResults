@@ -71,19 +71,20 @@ func main() {
 
 		//移動4方向をループ
 		for i := 0; i < 4; i++ {
-			fmt.Println("hapen!?")
 			var nx, ny int //移動したあとの座標
 			nx = cur.x + dx[i]
 			ny = cur.y + dy[i]
 
 			// 行ったことないならPut
-			if 0 <= nx && ny < N && 0 <= ny && ny < M && maze[nx][ny] != "#" && d[nx][ny] == INF {
-				que.Put(P{nx, ny})
-				// 移動できるならキューに入れ、その点の距離をpから距離+1で確定
-				d[nx][ny] = d[cur.x][cur.y] + 1
+			if 0 <= nx && nx < N && 0 <= ny && ny < M {
+				if maze[nx][ny] != "#" && d[nx][ny] == INF {
+					que.Put(P{nx, ny})
+					// 移動できるならキューに入れ、その点の距離をpから距離+1で確定
+					d[nx][ny] = d[cur.x][cur.y] + 1
+				}
 			}
 		}
 	}
-	// 全部終わるとゴールの座標に距離が入ってる・・・はず・・・？
+	// ゴールまでのPOP
 	print(d[gx][gy])
 }
